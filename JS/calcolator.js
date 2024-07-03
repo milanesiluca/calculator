@@ -12,13 +12,15 @@ console.log("write 'calculator' to start the calculator");
 function calculator(){
 
     console.log("Available operation:");
-    console.log("1 - Addiction");
-    console.log("2 - Substraction");
-    console.log("3 - Multiplication");
-    console.log("4 - Division");
+    console.log("'+' - Addiction");
+    console.log("'-' - Substraction");
+    console.log("'*' - Multiplication");
+    console.log("'/' - Division");
 
-    const choice = prompt("insert your choice: ");
-    if (isNumber(choice) == false || (choice < 1 || choice > 4) ){
+    
+
+    const choice = prompt("Insert your choice");
+    if (!['+', '-', '*', '/'].includes(choice) ){
         console.log("Invalid choice. Please write 'calculator' to start a new operation");
         return;
     }
@@ -35,11 +37,11 @@ function calculator(){
         return;
     }
 
-    if (choice === 1){
+    if (choice === '+'){
         add(a, b);
-    } else if (choice === 2){
+    } else if (choice === '-'){
         substruction(a, b);
-    } else if (choice === 3){
+    } else if (choice === '*'){
         multiply(a, b);
     } else {
         if (a === 0)
